@@ -1,0 +1,287 @@
+.frame-1,
+.frame-1 * {
+  box-sizing: border-box;
+}
+.frame-1 {
+  background: #ffffff;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+.rectangle-1 {
+  background: #ffab0f;
+  width: 576px;
+  height: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.rectangle-2 {
+  border-radius: var(--var-sds-size-radius-full, 9999px);
+  width: 477px;
+  height: 847px;
+  position: absolute;
+  left: 203px;
+  top: 250px;
+}
+.rectangle-22 {
+  background: #ffffff;
+  border-radius: var(--var-sds-size-radius-400, 16px);
+  width: 101.01%;
+  height: 100%;
+  position: absolute;
+  right: 1.51%;
+  left: -2.52%;
+  bottom: 16.17%;
+  top: -16.17%;
+  box-shadow: -14px 14px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.unlock-your-calorie-track-reset-your-passsword-now {
+  color: #000000;
+  text-align: left;
+  position: absolute;
+  left: 79px;
+  top: 546px;
+  width: 299px;
+  height: 130px;
+}
+.unlock-your-calorie-track-reset-your-passsword-now-span {
+  color: #000000;
+  font-family: "Katibeh-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+.unlock-your-calorie-track-reset-your-passsword-now-span2 {
+  color: #000000;
+  font-family: "LisuBosa-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.arrow-right-circle {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 364px;
+  top: 537px;
+  overflow: visible;
+}
+.image-1-photoroom-1 {
+  width: 426px;
+  height: 426px;
+  position: absolute;
+  left: 8px;
+  top: 41px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.if-you-want-to-recover-your-account-click-on-forgot-password-and-reset-your-password-to-regain-access {
+  color: #000000;
+  text-align: left;
+  font-family: "Jost-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: -17px;
+}
+.nutri-lens {
+  color: #000000;
+  text-align: left;
+  font-family: "IrishGrover-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  right: 64.65%;
+  left: 15.49%;
+  width: 19.86%;
+  bottom: 80.86%;
+  top: 14.45%;
+  height: 4.69%;
+}
+.rectangle-3 {
+  background: #ffb30f;
+  border-radius: var(--var-sds-size-radius-400, 16px);
+  width: 442px;
+  height: 782px;
+  position: absolute;
+  left: 744px;
+  top: 179px;
+  box-shadow: -20px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.didn-t-receive-the-email {
+  color: #000000;
+  text-align: left;
+  font-family: "Ruwudu-Medium", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+  position: absolute;
+  left: 811px;
+  top: 687px;
+}
+.no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password {
+  color: #000000;
+  text-align: left;
+  font-family: var(--title-medium-font, "-", sans-serif);
+  font-size: 14px;
+  line-height: var(--title-medium-line-height, 24px);
+  letter-spacing: var(--title-medium-tracking, 0.15px);
+  font-weight: 400;
+  position: absolute;
+  left: 780px;
+  top: 449px;
+}
+.no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span {
+  color: #000000;
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+.no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span2 {
+  color: #000000;
+  font-family: "Ruwudu-Medium", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+.no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span3 {
+  color: #000000;
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+.forgot-password {
+  color: #000000;
+  text-align: left;
+  font-family: "JacquesFrancois-Regular", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  text-decoration: underline;
+  position: absolute;
+  left: 780px;
+  top: 378px;
+  width: 395px;
+  height: 88px;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--var-sds-size-space-200, 8px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 811px;
+  top: 527px;
+}
+.label {
+  color: var(--var-sds-color-text-default-default, #1e1e1e);
+  text-align: left;
+  font-family: var(--body-emphasis-font-family, "Inter-BoldItalic", sans-serif);
+  font-size: var(--body-emphasis-font-size, 16px);
+  line-height: var(--body-emphasis-line-height, 140%);
+  font-weight: var(--body-emphasis-font-weight, 700);
+  font-style: var(--body-emphasis-font-style, italic);
+  position: relative;
+  align-self: stretch;
+}
+.input {
+  background: var(--var-sds-color-background-default-default, #ffffff);
+  border-radius: var(--var-sds-size-radius-200, 8px);
+  border-style: solid;
+  border-color: var(--var-sds-color-border-default-default, #d9d9d9);
+  border-width: 1px;
+  padding: var(--var-sds-size-space-300, 12px)
+    var(--var-sds-size-space-400, 16px) var(--var-sds-size-space-300, 12px)
+    var(--var-sds-size-space-400, 16px);
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-width: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.value {
+  color: var(--var-sds-color-text-default-default, #1e1e1e);
+  text-align: left;
+  font-family: var(
+    --single-line-body-base-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--single-line-body-base-font-size, 16px);
+  line-height: var(--single-line-body-base-line-height, 100%);
+  font-weight: var(--single-line-body-base-font-weight, 400);
+  position: relative;
+  flex: 1;
+}
+.button {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(to left, #1e1e1e, #1e1e1e);
+  border-radius: var(--var-sds-size-radius-200, 8px);
+  border-style: solid;
+  border-color: #2c2c2c;
+  border-width: 3px;
+  padding: var(--var-sds-size-space-300, 12px);
+  display: flex;
+  flex-direction: row;
+  gap: var(--var-sds-size-space-200, 8px);
+  align-items: center;
+  justify-content: center;
+  width: 239.77px;
+  height: 40px;
+  position: absolute;
+  left: 811px;
+  bottom: 362.59px;
+  box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  transform-origin: 0 0;
+  transform: rotate(-0.337deg) scale(1, 1);
+  overflow: hidden;
+}
+.button2 {
+  color: var(--var-sds-color-text-brand-on-brand, #f5f5f5);
+  text-align: left;
+  font-family: "AbyssinicaSil-Regular", sans-serif;
+  font-size: var(--var-sds-typography-body-size-medium, 16px);
+  line-height: 100%;
+  font-weight: var(--var-sds-typography-body-font-weight-regular, 400);
+  position: relative;
+}
+.button3 {
+  background: var(--var-sds-color-background-brand-default, #2c2c2c);
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--var-sds-color-border-brand-default, #2c2c2c);
+  border-width: 1px;
+  padding: 12px var(--var-sds-size-space-300, 12px) 12px
+    var(--var-sds-size-space-300, 12px);
+  display: flex;
+  flex-direction: row;
+  gap: var(--var-sds-size-space-200, 8px);
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 21px;
+  position: absolute;
+  left: 970px;
+  top: 684px;
+  overflow: hidden;
+}
+.button4 {
+  color: var(--var-sds-color-text-brand-on-brand, #f5f5f5);
+  text-align: left;
+  font-family: "AbyssinicaSil-Regular", sans-serif;
+  font-size: 13px;
+  line-height: 100%;
+  font-weight: 400;
+  position: relative;
+}

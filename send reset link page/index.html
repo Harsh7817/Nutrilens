@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./vars.css">
+  <link rel="stylesheet" href="./style.css">
+  
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="frame-1">
+    <div class="rectangle-1"></div>
+    <div class="rectangle-2">
+      <div class="rectangle-22"></div>
+      <div class="unlock-your-calorie-track-reset-your-passsword-now">
+        <span>
+          <span class="unlock-your-calorie-track-reset-your-passsword-now-span">
+            Unlock Your Calorie Track
+            <br />
+          </span>
+          <span class="unlock-your-calorie-track-reset-your-passsword-now-span2">
+            reset-your passsword NOW!
+          </span>
+        </span>
+      </div>
+      <img class="arrow-right-circle" src="arrow-right-circle0.svg" />
+      <img class="image-1-photoroom-1" src="image-1-photoroom-10.png" />
+      <div
+        class="if-you-want-to-recover-your-account-click-on-forgot-password-and-reset-your-password-to-regain-access"
+      >
+        &quot;If you want to recover your
+        <br />
+        account, click on &#039;Forgot Password’
+        <br />
+        and reset your password to regain access.&quot;
+      </div>
+    </div>
+    <div class="nutri-lens">NutriLens</div>
+    <div class="rectangle-3"></div>
+    <div class="didn-t-receive-the-email">Didn&#039;t receive the email?</div>
+    <div
+      class="no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password"
+    >
+      <span>
+        <span
+          class="no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span"
+        >
+          (&quot;
+        </span>
+        <span
+          class="no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span2"
+        >
+          No worries!
+          <br />
+          Just enter the email you used to sign up with NutriLens.
+          <br />
+          We’ll send you a reset link to help you set a new password.&quot;
+        </span>
+        <span
+          class="no-worries-just-enter-the-email-you-used-to-sign-up-with-nutri-lens-we-ll-send-you-a-reset-link-to-help-you-set-a-new-password-span3"
+        >
+          )
+        </span>
+      </span>
+    </div>
+    <div class="forgot-password">Forgot password?</div>
+    <div class="input-field">
+      <div class="label">Email*:</div>
+      <div class="input">
+        <input type="email" placeholder="Enter your email" style="padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;">
+      </div>
+    </div>
+    <div class="button">
+      <button class="button2" onclick="sendResetLink()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; background-color: #4CAF50; color: white;">
+        Send reset link
+      </button>
+    </div>    
+    <div class="button3">
+      <div class="button4">Resend</div>
+    </div>
+  </div>
+  
+  <script type="module">
+    // Import Supabase client
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+  
+    // Initialize Supabase
+    const supabaseUrl = 'https://eqgcynoaryjcdqkuxlhz.supabase.co.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxZ2N5bm9hcnlqY2Rxa3V4bGh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NjQ2NzcsImV4cCI6MjA2MDU0MDY3N30.ZED28FpdAkwFB5izYSlMDVnY31rGbIZey3fbVT3-CEY'; // Keep secret keys safe in real deployments
+    const supabase = createClient(supabaseUrl, supabaseKey);
+  
+    async function sendResetLink() {
+      const emailInput = document.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+  
+      if (!email) {
+        alert("Please enter your email address.");
+        return;
+      }
+  
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: 'https://yourdomain.com/reset-password.html', // your custom reset page
+      });
+  
+      if (error) {
+        alert("Error: " + error.message);
+      } else {
+        alert("Reset link sent to your email!");
+      }
+    }
+  </script>
+  
+</body>
+</html>
