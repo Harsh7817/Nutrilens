@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checking Account...</title>
+</head>
+<body>
+  <h2 style="text-align: center; margin-top: 20%;">Checking your account, please wait...</h2>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const supabaseUrl = 'https://eqgcynoaryjcdqkuxlhz.supabase.co';
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxZ2N5bm9hcnlqY2Rxa3V4bGh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NjQ2NzcsImV4cCI6MjA2MDU0MDY3N30.ZED28FpdAkwFB5izYSlMDVnY31rGbIZey3fbVT3-CEY';
+      
+      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+      console.log("✅ Supabase initialized");
+
+      const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+
+      if (sessionError || !sessionData.session) {
+        console.error('❌ No active session:', sessionError?.message || "No session");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const user = sessionData.session.user;
+      const userEmail = user.email.trim().toLowerCase();
+
+      console.log('📧 Logged in user:', userEmail);
+
+      // Correct SELECT syntax
+      const { data: userData, error: fetchError } = await supabase
+        .from('user_data')
+        .select('*')
+        .eq('email', userEmail)
+        .maybeSingle();  // Use maybeSingle to avoid weird errors if no rows
+
+      if (fetchError) {
+        console.error('❌ Error fetching user_data:', fetchError.message);
+        return;
+      }
+
+      if (userData) {
+        console.log('✅ Existing user found, redirecting to dashboard...');
+        window.location.href = "./dashboard/dashboard.html";
+      } else {
+        console.log('⚡ No user found, creating new user...');
+
+        const { data: insertData, error: insertError } = await supabase
+          .from('user_data')
+          .insert([{ 
+            id: user.id, 
+            email: userEmail 
+          }]);
+
+        if (insertError) {
+          if (insertError.code === '23505') { // 23505 = duplicate key violation (Postgres)
+            console.warn('⚠️ User already exists, probably race condition. Proceeding to dashboard...');
+            window.location.href = "./dashboard/dashboard.html";
+          } else {
+            console.error('❌ Error inserting new user:', insertError.message);
+            return;
+          }
+        } else {
+          console.log('✅ New user created, redirecting to dashboard...');
+          window.location.href = "./dashboard/dashboard.html";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

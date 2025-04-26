@@ -179,7 +179,7 @@
   
         // Insert extra details into "User's Data" table
         const { data: userData, error: userDataError } = await client
-          .from('User\'s Data') // Use the correct table name
+          .from('user_data') // Use the correct table name
           .insert([{
             id: signUpData.user.id, // user ID from auth
             full_name: fullName,
