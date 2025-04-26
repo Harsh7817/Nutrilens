@@ -6,13 +6,12 @@
 </head>
 <body>
   <h2>Google Sign-In with Supabase</h2>
-  <button id="login">Sign in with Google</button>
 
-  <!-- ✅ Load Supabase with fixed version -->
+  <!-- ✅ Load Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       // ✅ Supabase initialized properly
       const supabaseUrl = 'https://eqgcynoaryjcdqkuxlhz.supabase.co';
       const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxZ2N5bm9hcnlqY2Rxa3V4bGh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ5NjQ2NzcsImV4cCI6MjA2MDU0MDY3N30.ZED28FpdAkwFB5izYSlMDVnY31rGbIZey3fbVT3-CEY';
@@ -20,23 +19,19 @@
 
       console.log("✅ Supabase initialized:", supabase);
    
-      // ✅ Google Sign-In
-      document.getElementById('login').addEventListener('click', async () => {
-        console.log("🔍 Login button clicked");
+      // ✅ Auto-trigger Google Sign-In when page loads
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: 'http://127.0.0.1:5500/',
+        },
+      });
 
-        const { data, error } = await supabase.auth.signInWithOAuth({
-          provider: 'google',
-          options: {
-            redirectTo: 'http://127.0.0.1:5500/',
-          },
-        });
-
-        if (error) {
-          console.error('❌ Login Error:', error.message);
-        } else {
-          console.log('✅ Redirecting to Google login...', data);
-        }
-      });   
+      if (error) {
+        console.error('❌ Login Error:', error.message);
+      } else {
+        console.log('✅ Redirecting to Google login...', data);
+      }
 
       // ✅ Optional: Auth state listener
       supabase.auth.onAuthStateChange((event, session) => {
